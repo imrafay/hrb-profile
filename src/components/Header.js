@@ -15,7 +15,7 @@ function Header() {
     <div className="
     fixed w-full h-[80px]
     flex justify-between items-center
-    px-4 bg-slate-300 text-gray-700">
+    px-4 bg-slate-300 text-gray-700 font-bold">
       <img src={Logo} alt="Logo" style={{width:'75px'}}/>
       
       <ul className="hidden md:flex">
