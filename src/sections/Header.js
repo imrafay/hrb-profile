@@ -1,4 +1,4 @@
-import Logo from "../assets/HRB-Logo.png";
+import Logo from "../assets/app-logo.png";
 import { FaBarsStaggered } from "react-icons/fa6";
 import { FaTimes } from "react-icons/fa";
 
