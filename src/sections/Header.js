@@ -21,7 +21,7 @@ function Header() {
       <ul className="hidden md:flex">
         <li>Home</li>
         <li>About</li>
-        <li>Experiences</li>
+        <li>Skills</li>
         <li>Projects</li>
         <li>Resume</li>
       </ul>
