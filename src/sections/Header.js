@@ -1,4 +1,4 @@
-import Logo from "../assets/app-logo.png";
+import Logo from "../assets/logo.png";
 import { FaBarsStaggered } from "react-icons/fa6";
 import { FaTimes } from "react-icons/fa";
 
@@ -15,8 +15,8 @@ function Header() {
     <div className="
     fixed w-full h-[80px]
     flex justify-between items-center
-    px-4 bg-slate-300 text-gray-700 font-bold">
-      <img src={Logo} alt="Logo" style={{width:'75px'}}/>
+    px-4 bg-gray-800 text-gray-100 font-bold">
+      <img src={Logo} alt="Logo" style={{width:'250px'}}/>
       
       <ul className="hidden md:flex">
         <li>Home</li>
