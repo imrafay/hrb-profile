@@ -12,7 +12,7 @@ function Projects() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <div className="bg-white border border-gray-200 rounded-lg shadow">
-            <img className="w-full h-48 object-cover rounded-t-lg" src={Rhithm} alt="Rhithm Site Image" />
+            <img className="w-full h-48 object-cover rounded-t-lg" src={Rhithm} alt="Rhithm Site" />
             <div className="p-5">
               <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
                 Rhithm
@@ -23,7 +23,7 @@ function Projects() {
                 in five key areas of wellness. Based on their answers, our algorithm presents each student with
                 a short activity to teach them essential life skills and/or to get them ready to learn.
               </p>
-              <a href="https://rhithm.app" target="_blank" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-gray-900 rounded-lg focus:ring-4 focus:outline-none focus:ring-gray-300">
+              <a href="https://rhithm.app" target="_blank" rel="noreferrer" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-gray-900 rounded-lg focus:ring-4 focus:outline-none focus:ring-gray-300">
                 Live
                 <svg className="rtl:rotate-180 w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                   <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
@@ -33,7 +33,7 @@ function Projects() {
           </div>
 
           <div className="bg-white border border-gray-200 rounded-lg shadow">
-            <img className="w-full h-48 object-cover rounded-t-lg" src={Arztpool} alt="Arztpool Site Image" />
+            <img className="w-full h-48 object-cover rounded-t-lg" src={Arztpool} alt="Arztpool Site" />
             <div className="p-5">
               <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
                 Arztpool
@@ -42,7 +42,7 @@ function Projects() {
                 Arztpool is a platform connecting patients with doctors. It provides features like booking
                 appointments, virtual consultations, and more.
               </p>
-              <a href="https://arztpool.de" target="_blank" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-gray-900 rounded-lg focus:ring-4 focus:outline-none focus:ring-gray-300">
+              <a href="https://arztpool.de" target="_blank" rel="noreferrer" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-gray-900 rounded-lg focus:ring-4 focus:outline-none focus:ring-gray-300">
                 Live
                 <svg className="rtl:rotate-180 w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                   <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
@@ -52,7 +52,7 @@ function Projects() {
           </div>
 
           <div className="bg-white border border-gray-200 rounded-lg shadow">
-            <img className="w-full h-48 object-cover rounded-t-lg" src={Velo} alt="Velo Site Image" />
+            <img className="w-full h-48 object-cover rounded-t-lg" src={Velo} alt="Velo Site" />
             <div className="p-5">
               <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                 Velo
@@ -61,7 +61,7 @@ function Projects() {
                 Velo is a cycling app that helps users track their rides, find new routes, and connect with
                 other cyclists.
               </p>
-              <a href="https://www.velo-hub.de" target="_blank" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-gray-900 rounded-lg focus:ring-4 focus:outline-none focus:ring-gray-300">
+              <a href="https://www.velo-hub.de" target="_blank" rel="noreferrer" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-gray-900 rounded-lg focus:ring-4 focus:outline-none focus:ring-gray-300">
                 Live
                 <svg className="rtl:rotate-180 w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                   <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
