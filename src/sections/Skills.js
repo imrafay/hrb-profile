@@ -6,52 +6,55 @@ import Javascript from "../assets/javascript.png";
 import SQL from "../assets/sql.png";
 import Vue from "../assets/vue.png";
 import Typescript from "../assets/typescript.png";
+import Next from "../assets/next.png";
+import Mongodb from "../assets/mongodb.png";
+import Node from "../assets/node.png";
+import React from "../assets/react.png";
+import Redux from "../assets/redux.png";
+import Tailwind from "../assets/tailwind.png";
+import AWS from "../assets/aws.png";
 
 
-function Skills(){
+
+const skills = [
+    { name: "C#", img: C_Sharp },
+    { name: "Javascript", img: Javascript },
+    { name: "SQL", img: SQL },
+    { name: "Nodejs", img: Node },
+    { name: "ASP.NET CORE", img: DotNET },
+    { name: "Typescript", img: Typescript },
+    { name: "Mongodb", img: Mongodb },
+    { name: "Nextjs", img: Next },
+    { name: "Azure", img: Azure },
+    { name: "React", img: React },
+    { name: "GIT Version Control", img: GIT },
+    { name: "AWS", img: AWS },
+];
+
+function Skills() {
     return (
-    <div name="skills" className="w-full h-screen bg-gray-900 text-gray-100">
-        <div className="max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full">
-            <div>
-                <p className="text-4xl font-bold inline border-b-4 border-gray-600">Skills</p>
-                <p className="py-4">These are the technologies I have worked with over the years.</p>
-            </div>
-            <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-4 text-center py-8">
-                <div className="rounded-md shadow-md shadow-gray-800 hover:cursor-pointer hover:scale-110 duration-500">
-                    <img className="w-20 mx-auto" src={C_Sharp} alt="C# Logo"/>
-                    <p className="my-4">C#</p>
-                </div>
-                <div className="rounded-md shadow-md shadow-gray-800 hover:cursor-pointer hover:scale-110 duration-500">
-                    <img className="w-20 mx-auto" src={DotNET} alt="C# Logo"/>
-                    <p className="my-4">ASP.NET CORE</p>
-                </div>
-                <div className="rounded-md shadow-md shadow-gray-800 hover:cursor-pointer hover:scale-110 duration-500">
-                    <img className="w-20 mx-auto" src={Azure} alt="C# Logo"/>
-                    <p className="my-4">Azure</p>
-                </div>
-                <div className="rounded-md shadow-md shadow-gray-800 hover:cursor-pointer hover:scale-110 duration-500">
-                    <img className="w-20 mx-auto" src={SQL} alt="C# Logo"/>
-                    <p className="my-4">SQL</p>
-                </div>
-                <div className="rounded-md shadow-md shadow-gray-800 hover:cursor-pointer hover:scale-110 duration-500">
-                    <img className="w-20 mx-auto" src={Javascript} alt="C# Logo"/>
-                    <p className="my-4">Javascript</p>
-                </div>
-                <div className="rounded-md shadow-md shadow-gray-800 hover:cursor-pointer hover:scale-110 duration-500">
-                    <img className="w-20 mx-auto" src={Typescript} alt="C# Logo"/>
-                    <p className="my-4">Typescript</p>
-                </div>
-                <div className="rounded-md shadow-md shadow-gray-800 hover:cursor-pointer hover:scale-110 duration-500">
-                    <img className="w-20 mx-auto" src={Vue} alt="C# Logo"/>
-                    <p className="my-4">VueJS</p>
-                </div>
-                <div className="rounded-md shadow-md shadow-gray-800 hover:cursor-pointer hover:scale-110 duration-500">
-                    <img className="w-20 mx-auto" src={GIT} alt="C# Logo"/>
-                    <p className="my-4">GIT Version Control</p>
+        <section name="skills" className="w-full min-h-screen bg-gray-950 text-gray-50 py-20">
+            <div className="max-w-6xl mx-auto px-6">
+                <header className="text-center">
+                    <h2 className="text-5xl font-bold tracking-wide mb-6 text-teal-400">Skills</h2>
+                    <p className="text-lg text-gray-400 mb-12">
+                        These are the technologies I have worked with over the years.
+                    </p>
+                </header>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    {skills.map((skill, index) => (
+                        <div
+                            key={index}
+                            className="flex flex-col items-center justify-center p-6 rounded-lg bg-gray-900 shadow-lg hover:shadow-teal-500/50 transform transition-transform duration-300 hover:-translate-y-2"
+                        >
+                            <img className="w-16 h-16 mb-4" src={skill.img} alt={`${skill.name} Logo`} />
+                            <p className="text-xl font-semibold">{skill.name}</p>
+                        </div>
+                    ))}
                 </div>
             </div>
-        </div>
-    </div>);
+        </section>
+    );
 }
 
 export default Skills;
