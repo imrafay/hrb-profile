@@ -4,14 +4,11 @@ import DotNET from "../assets/dotnet.png";
 import GIT from "../assets/git.png";
 import Javascript from "../assets/javascript.png";
 import SQL from "../assets/sql.png";
-import Vue from "../assets/vue.png";
 import Typescript from "../assets/typescript.png";
 import Next from "../assets/next.png";
 import Mongodb from "../assets/mongodb.png";
 import Node from "../assets/node.png";
 import React from "../assets/react.png";
-import Redux from "../assets/redux.png";
-import Tailwind from "../assets/tailwind.png";
 import AWS from "../assets/aws.png";
 
 
