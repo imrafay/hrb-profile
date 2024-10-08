@@ -1,51 +1,33 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import blogsData from "../data/blogs";
 
 const BlogsPage = () => {
-    const { category } = useParams();
-    const categories = Object.keys(blogsData);
+    const categories = Object.keys(blogsData); // Get all categories from the blogsData
 
     return (
-        <div className="container mx-auto py-10">
-            <h1 className="text-3xl font-bold text-gray-800 mb-6">Blogs</h1>
-            {category ? (
-                <>
-                    <h2 className="text-2xl font-semibold text-blue-500">
-                        {category.toUpperCase()}
-                    </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
-                        {blogsData[category].map((blog) => (
-                            <Link
-                                to={`/blogs/${category}/${blog.id}`}
-                                key={blog.id}
-                                className="block p-6 bg-white shadow-md rounded hover:shadow-xl"
-                            >
-                                <h3 className="text-xl font-semibold text-gray-800">
-                                    {blog.title}
-                                </h3>
-                                <p className="text-gray-600">{blog.description}</p>
-                            </Link>
-                        ))}
-                    </div>
-                </>
-            ) : (
-                <>
-                    <h2 className="text-2xl font-semibold">Categories</h2>
-                    <ul className="mt-4 space-y-4">
-                        {categories.map((cat) => (
-                            <li key={cat}>
+        <div className="bg-gradient-to-r from-gray-800 via-gray-900 to-black text-gray-100 min-h-screen py-10">
+            <div className="container mx-auto px-4">
+                <h1 className="text-4xl font-bold text-teal-400 mb-10">Blog Categories</h1>
+
+                {categories.map((category) => (
+                    <div key={category} className="mb-12">
+                        <h2 className="text-3xl font-semibold text-teal-400 mb-6">{blogsData[category].title}</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {blogsData[category].Content.map((blog) => (
                                 <Link
-                                    to={`/blogs/${cat}`}
-                                    className="text-blue-500 hover:underline text-lg"
+                                    to={`/blogs/${category}/${blog.id}`}
+                                    key={blog.id}
+                                    className="block p-6 bg-gray-900 shadow-lg rounded-lg hover:shadow-xl transform hover:scale-105 transition-transform duration-300"
                                 >
-                                    {cat.toUpperCase()}
+                                    <h3 className="text-2xl font-semibold text-teal-400 mb-2">{blog.title}</h3>
+                                    <p className="text-gray-300">{blog.description}</p>
                                 </Link>
-                            </li>
-                        ))}
-                    </ul>
-                </>
-            )}
+                            ))}
+                        </div>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 };

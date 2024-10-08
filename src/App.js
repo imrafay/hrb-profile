@@ -9,14 +9,16 @@ import BlogDetailPage from './pages/BlogDetailPage';
 function App() {
   return (
     <Router>
-      <div>
+      <div className="flex flex-col min-h-screen">
         <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/blogs" element={<BlogsPage />} />
-          <Route path="/blogs/:category" element={<BlogsPage />} />
-          <Route path="/blogs/:category/:id" element={<BlogDetailPage />} />
-        </Routes>
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/blogs" element={<BlogsPage />} />
+            <Route path="/blogs/:category" element={<BlogsPage />} />
+            <Route path="/blogs/:category/:id" element={<BlogDetailPage />} />
+          </Routes>
+        </main>
         <Footer />
       </div>
     </Router>
