@@ -1,21 +1,25 @@
 import './App.css';
-import Banner from './sections/Banner';
 import Header from './sections/Header';
 import Footer from './sections/Footer';
-import About from './sections/About';
-import Skills from './sections/Skills';
-import Projects from './sections/Projects';
+import Home from './pages/Home';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import BlogsPage from './pages/BlogsPage';
+import BlogDetailPage from './pages/BlogDetailPage';
 
 function App() {
   return (
-    <div>
-      <Header />
-      <Banner />
-      <About />
-      <Skills />
-      <Projects />
-      <Footer />
-    </div>
+    <Router>
+      <div>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/blogs" element={<BlogsPage />} />
+          <Route path="/blogs/:category" element={<BlogsPage />} />
+          <Route path="/blogs/:category/:id" element={<BlogDetailPage />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

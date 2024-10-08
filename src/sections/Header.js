@@ -1,7 +1,9 @@
 import Logo from "../assets/logo.png";
 import { FaBarsStaggered } from "react-icons/fa6";
 import { FaTimes } from "react-icons/fa";
-import { Link } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
+import { Link } from "react-router-dom";
+
 import { useState } from "react";
 
 function Header() {
@@ -18,37 +20,43 @@ function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-8">
-          <Link
+          <ScrollLink
             to="home"
             smooth={true}
             duration={500}
-            className="hover:text-teal-400 transition-colors duration-300 cursor-pointer"
+            className="hover:text-teal-400 mt-2 transition-colors duration-300 cursor-pointer"
           >
             Home
-          </Link>
-          <Link
+          </ScrollLink>
+          <ScrollLink
             to="about"
             smooth={true}
             duration={500}
-            className="hover:text-teal-400 transition-colors duration-300 cursor-pointer"
+            className="hover:text-teal-400 mt-2 transition-colors duration-300 cursor-pointer"
           >
             About
-          </Link>
-          <Link
+          </ScrollLink>
+          <ScrollLink
             to="skills"
             smooth={true}
             duration={500}
-            className="hover:text-teal-400 transition-colors duration-300 cursor-pointer"
+            className="hover:text-teal-400 mt-2 transition-colors duration-300 cursor-pointer"
           >
             Skills
-          </Link>
-          <Link
+          </ScrollLink>
+          <ScrollLink
             to="projects"
             smooth={true}
             duration={500}
-            className="hover:text-teal-400 transition-colors duration-300 cursor-pointer"
+            className="hover:text-teal-400 mt-2 transition-colors duration-300 cursor-pointer"
           >
             Projects
+          </ScrollLink>
+          <Link
+            to="/blogs"
+            className="hover:text-teal-400 mt-2 transition-colors duration-300 cursor-pointer"
+          >
+            Interivew Preparation
           </Link>
           <a
             href={`${process.env.PUBLIC_URL}/Resume.pdf`}
@@ -89,7 +97,7 @@ function Header() {
       >
         <ul className="flex flex-col items-center justify-center h-full space-y-8 text-2xl">
           <li>
-            <Link
+            <ScrollLink
               to="home"
               smooth={true}
               duration={500}
@@ -97,10 +105,10 @@ function Header() {
               className="hover:text-teal-400 transition-colors duration-300 cursor-pointer"
             >
               Home
-            </Link>
+            </ScrollLink>
           </li>
           <li>
-            <Link
+            <ScrollLink
               to="about"
               smooth={true}
               duration={500}
@@ -108,10 +116,10 @@ function Header() {
               className="hover:text-teal-400 transition-colors duration-300 cursor-pointer"
             >
               About
-            </Link>
+            </ScrollLink>
           </li>
           <li>
-            <Link
+            <ScrollLink
               to="skills"
               smooth={true}
               duration={500}
@@ -119,10 +127,10 @@ function Header() {
               className="hover:text-teal-400 transition-colors duration-300 cursor-pointer"
             >
               Skills
-            </Link>
+            </ScrollLink>
           </li>
           <li>
-            <Link
+            <ScrollLink
               to="projects"
               smooth={true}
               duration={500}
@@ -130,7 +138,7 @@ function Header() {
               className="hover:text-teal-400 transition-colors duration-300 cursor-pointer"
             >
               Projects
-            </Link>
+            </ScrollLink>
           </li>
           <li>
             <a
