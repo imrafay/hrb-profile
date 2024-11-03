@@ -12,7 +12,7 @@ const SiteMap = ({ blogsData }) => {
 
     return (
         <aside className="col-span-1 bg-gray-900 p-6 rounded-lg shadow-lg h-[800px] overflow-y-auto custom-scrollbar">
-            <h2 className="text-2xl font-semibold text-teal-400 mb-4">Site Map</h2>
+            <h2 className="text-2xl font-semibold text-teal-400 mb-4">Topics</h2>
             <ul className="space-y-4">
                 {Object.keys(blogsData).map((cat) => (
                     <li key={cat}>

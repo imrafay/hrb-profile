@@ -9,9 +9,9 @@ const BlogsPage = () => {
 
     const categoriesPerPage = 5;
 
+    // Filter categories and blogs based on search query
     const filteredCategories = categories.filter((category) => {
         const categoryTitleMatches = blogsData[category].title.toLowerCase().includes(searchQuery.toLowerCase());
-
         const contentTitleMatches = blogsData[category].Content.some((x) =>
             x.title.toLowerCase().includes(searchQuery.toLowerCase())
         );
@@ -50,6 +50,12 @@ const BlogsPage = () => {
                 {/* Category List with Pagination */}
                 {currentCategories.map((category) => {
                     const isCategoryMatch = blogsData[category].title.toLowerCase().includes(searchQuery.toLowerCase());
+                    const filteredBlogs = blogsData[category].Content.filter((blog) =>
+                        blog.title.toLowerCase().includes(searchQuery.toLowerCase())
+                    );
+
+                    // Only render the category if it matches or if there are matching blogs
+                    if (!isCategoryMatch && filteredBlogs.length === 0) return null;
 
                     return (
                         <div key={category} className="mb-12">
@@ -59,32 +65,42 @@ const BlogsPage = () => {
                             >
                                 {blogsData[category].title}
                             </h2>
-                            <div
-                                className={
-                                    blogsData[category].type === "basic"
-                                        ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-                                        : "grid"
-                                }
-                            >
-                                {blogsData[category].Content.map((blog) => {
-                                    const isBlogTitleMatch = blog.title.toLowerCase().includes(searchQuery.toLowerCase());
 
-                                    return (
+                            {/* Show matching blogs only if the category doesn't match */}
+                            {!isCategoryMatch && (
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                    {filteredBlogs.map((blog) => (
                                         <Link
                                             to={`/topics/${category}/${blog.id}`}
                                             key={blog.id}
                                             className="block p-4 bg-gray-900 shadow-lg rounded-lg hover:shadow-xl transform hover:scale-105 transition-transform duration-300 my-2"
                                         >
                                             <h3
-                                                className={`text-2xl font-semibold mb-1 ${isBlogTitleMatch && searchQuery !== "" ? "text-yellow-400" : "text-teal-400"
-                                                    }`}
+                                                className={`text-2xl font-semibold mb-1 text-yellow-400`}
                                             >
                                                 {blog.title}
                                             </h3>
                                         </Link>
-                                    );
-                                })}
-                            </div>
+                                    ))}
+                                </div>
+                            )}
+
+                            {/* Show all blogs if the category itself matches */}
+                            {isCategoryMatch && (
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                    {blogsData[category].Content.map((blog) => (
+                                        <Link
+                                            to={`/topics/${category}/${blog.id}`}
+                                            key={blog.id}
+                                            className="block p-4 bg-gray-900 shadow-lg rounded-lg hover:shadow-xl transform hover:scale-105 transition-transform duration-300 my-2"
+                                        >
+                                            <h3 className="text-2xl font-semibold mb-1 text-teal-400">
+                                                {blog.title}
+                                            </h3>
+                                        </Link>
+                                    ))}
+                                </div>
+                            )}
                         </div>
                     );
                 })}
