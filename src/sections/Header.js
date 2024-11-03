@@ -1,9 +1,7 @@
 import Logo from "../assets/logo.png";
 import { FaBarsStaggered } from "react-icons/fa6";
 import { FaTimes } from "react-icons/fa";
-import { Link as ScrollLink } from "react-scroll";
 import { Link } from "react-router-dom";
-
 import { useState } from "react";
 
 function Header() {
@@ -16,44 +14,41 @@ function Header() {
   return (
     <header className="fixed w-full h-20 bg-gray-900 text-gray-100 shadow-lg z-50">
       <div className="max-w-7xl mx-auto px-4 flex justify-between items-center h-full">
-        <img src={Logo} alt="Logo" className="w-40" />
+        <Link
+          to="/#home"
+        >
+          <img src={Logo} alt="Logo" className="w-40" />
+
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-8">
-          <ScrollLink
-            to="home"
-            smooth={true}
-            duration={500}
+          <Link
+            to="/#home"
             className="hover:text-teal-400 mt-2 transition-colors duration-300 cursor-pointer"
           >
             Home
-          </ScrollLink>
-          <ScrollLink
-            to="about"
-            smooth={true}
-            duration={500}
+          </Link>
+          <Link
+            to="/#about"
             className="hover:text-teal-400 mt-2 transition-colors duration-300 cursor-pointer"
           >
             About
-          </ScrollLink>
-          <ScrollLink
-            to="skills"
-            smooth={true}
-            duration={500}
+          </Link>
+          <Link
+            to="/#skills"
             className="hover:text-teal-400 mt-2 transition-colors duration-300 cursor-pointer"
           >
             Skills
-          </ScrollLink>
-          <ScrollLink
-            to="projects"
-            smooth={true}
-            duration={500}
+          </Link>
+          <Link
+            to="/#projects"
             className="hover:text-teal-400 mt-2 transition-colors duration-300 cursor-pointer"
           >
             Projects
-          </ScrollLink>
+          </Link>
           <Link
-            to="/blogs"
+            to="/topics"
             className="hover:text-teal-400 mt-2 transition-colors duration-300 cursor-pointer"
           >
             Interivew Preparation
@@ -97,48 +92,40 @@ function Header() {
       >
         <ul className="flex flex-col items-center justify-center h-full space-y-8 text-2xl">
           <li>
-            <ScrollLink
-              to="home"
-              smooth={true}
-              duration={500}
+            <Link
+              to="/#home"
               onClick={handleClickNav}
               className="hover:text-teal-400 transition-colors duration-300 cursor-pointer"
             >
               Home
-            </ScrollLink>
+            </Link>
           </li>
           <li>
-            <ScrollLink
-              to="about"
-              smooth={true}
-              duration={500}
+            <Link
+              to="/#about"
               onClick={handleClickNav}
               className="hover:text-teal-400 transition-colors duration-300 cursor-pointer"
             >
               About
-            </ScrollLink>
+            </Link>
           </li>
           <li>
-            <ScrollLink
-              to="skills"
-              smooth={true}
-              duration={500}
+            <Link
+              to="/#skills"
               onClick={handleClickNav}
               className="hover:text-teal-400 transition-colors duration-300 cursor-pointer"
             >
               Skills
-            </ScrollLink>
+            </Link>
           </li>
           <li>
-            <ScrollLink
-              to="projects"
-              smooth={true}
-              duration={500}
+            <Link
+              to="/#projects"
               onClick={handleClickNav}
               className="hover:text-teal-400 transition-colors duration-300 cursor-pointer"
             >
               Projects
-            </ScrollLink>
+            </Link>
           </li>
           <li>
             <a

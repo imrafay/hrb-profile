@@ -1,4 +1,442 @@
 const blogsData = {
+    javaScript: {
+        title: "JavaScript",
+        type: "basic",
+        Content: [
+            {
+                id: "1",
+                title: "JavaScript Engine",
+                description:
+                    "A JavaScript engine is a program or an interpreter that executes JavaScript code. It parses and converts JavaScript code into machine code that can be executed by the computer. Popular JavaScript engines include V8 (used by Chrome and Node.js) and SpiderMonkey (used by Firefox).",
+                workFlow: [
+                    "Parsing: The engine parses the JavaScript code to understand its structure and syntax.",
+                    "Compilation: Modern engines like V8 compile JavaScript to machine code before executing it, for faster performance.",
+                    "Execution: The compiled code is executed, performing tasks as specified in the JavaScript code."
+                ],
+                Benefits: [
+                    "High-performance JavaScript engines enable complex applications to run in browsers and other environments.",
+                    "Engines like V8 optimize code execution, reducing latency and improving user experiences.",
+                    "Understanding how the JavaScript engine works can help developers write more optimized code."
+                ]
+            },
+            {
+                id: "2",
+                title: "Browser Runtime",
+                description:
+                    "The browser runtime provides the environment in which JavaScript code executes. It includes the JavaScript engine, Web APIs, and the event loop, allowing JavaScript to interact with HTML, CSS, and other browser resources.",
+                workFlow: [
+                    "JavaScript Engine: Executes JavaScript code.",
+                    "Web APIs: APIs like DOM manipulation, fetch, and timers are provided by the browser to interact with the environment.",
+                    "Event Loop: Manages asynchronous tasks, allowing JavaScript to handle multiple operations without blocking."
+                ],
+                Benefits: [
+                    "The browser runtime enables JavaScript to interact with and control the web page's elements and behavior.",
+                    "Understanding the browser runtime helps developers manage asynchronous behavior and optimize web application performance.",
+                    "Knowledge of the browser runtime can aid in debugging issues related to the environment where JavaScript runs."
+                ]
+            },
+            {
+                id: "3",
+                title: "Execution Context",
+                description:
+                    "An execution context is an environment in which JavaScript code is evaluated and executed. JavaScript creates a global execution context and a new execution context for each function invocation.",
+                workFlow: [
+                    "Global Execution Context: Created when the JavaScript code starts executing.",
+                    "Function Execution Context: Created whenever a function is invoked.",
+                    "Variable Scope: Each execution context has its own scope, defining where variables and functions are accessible."
+                ],
+                Benefits: [
+                    "Understanding execution contexts helps in managing variable scope, avoiding naming conflicts, and debugging JavaScript code.",
+                    "Execution context knowledge is essential to grasp closures and the behavior of the `this` keyword.",
+                    "It aids in understanding how JavaScript manages function calls and variable environments."
+                ]
+            },
+            {
+                id: "8",
+                title: "this",
+                description:
+                    "The `this` keyword in JavaScript refers to the context in which a function is executed. Its value is determined by how a function is called and can refer to different objects depending on the context.",
+                workFlow: [
+                    "Global Context: In the global context, `this` refers to the global object (e.g., window in browsers).",
+                    "Function Context: Within a function, `this` depends on how the function is called.",
+                    "Object Context: Inside an object's method, `this` refers to the object that called the method."
+                ],
+                Benefits: [
+                    "Understanding `this` helps in controlling the context and behavior of functions.",
+                    "It enables developers to manage object-oriented patterns and design.",
+                    "Mastering `this` is essential for debugging and writing consistent JavaScript code."
+                ]
+            },
+            {
+                id: "18",
+                title: "Event Queue",
+                description:
+                    "The event queue in JavaScript is a mechanism that holds messages (or events) to be processed by the event loop. It stores asynchronous callbacks and waits for the main thread to be free before executing them.",
+                workFlow: [
+                    "Add Event: Asynchronous tasks (like API calls or timers) place their callbacks into the event queue once ready.",
+                    "Wait for Main Thread: The event queue waits until the main thread is idle.",
+                    "Execute Event: The event loop picks up and executes the first task in the event queue."
+                ],
+                Benefits: [
+                    "The event queue helps manage asynchronous tasks in JavaScript, enhancing application responsiveness.",
+                    "It enables non-blocking execution, allowing applications to handle multiple tasks concurrently.",
+                    "Understanding the event queue is essential for debugging asynchronous code behavior."
+                ]
+            },
+            {
+                id: "24",
+                title: "Event Loop",
+                description:
+                    "The event loop is a mechanism in JavaScript that manages asynchronous operations by continuously checking the call stack and the event queue. It allows non-blocking execution by running queued tasks when the main stack is empty.",
+                workFlow: [
+                    "Check Call Stack: The event loop monitors the call stack for active tasks.",
+                    "Process Event Queue: When the call stack is empty, it picks the first task from the event queue.",
+                    "Execute Task: The task is moved to the call stack and executed."
+                ],
+                Benefits: [
+                    "The event loop enables asynchronous programming, allowing JavaScript to handle multiple operations.",
+                    "It prevents blocking of the main thread, improving application responsiveness.",
+                    "Understanding the event loop is essential for managing async operations and debugging issues in JavaScript."
+                ]
+            },
+            {
+                id: "19",
+                title: "SetTimeout vs SetInterval",
+                description:
+                    "`setTimeout` and `setInterval` are JavaScript functions that manage timing events. `setTimeout` executes a function once after a specified delay, while `setInterval` repeatedly executes a function at specified intervals.",
+                workFlow: [
+                    "SetTimeout: Executes a function once after a delay.",
+                    "SetInterval: Repeatedly executes a function every specified time interval.",
+                    "Clear: Both can be cleared using `clearTimeout` and `clearInterval` respectively."
+                ],
+                Benefits: [
+                    "`setTimeout` is useful for delaying execution or scheduling tasks in JavaScript.",
+                    "`setInterval` helps in creating recurring events, like updating a clock or checking for updates.",
+                    "Understanding these methods is crucial for controlling time-based events in web applications."
+                ]
+            },
+            {
+                id: "4",
+                title: "Promises",
+                description:
+                    "Promises in JavaScript represent the eventual completion (or failure) of an asynchronous operation. They allow handling asynchronous code in a more readable and manageable way compared to callbacks.",
+                workFlow: [
+                    "Creation: A promise is created and can be in pending state.",
+                    "Resolution: When the async operation completes successfully, the promise resolves.",
+                    "Rejection: If the operation fails, the promise is rejected."
+                ],
+                Benefits: [
+                    "Promises provide a cleaner alternative to callback-based asynchronous code, improving readability.",
+                    "They support chaining with `.then()` and `.catch()` methods, enabling better control over async flows.",
+                    "Promises make handling errors easier in asynchronous operations, improving debugging and reliability."
+                ]
+            },
+            {
+                id: "25",
+                title: "Callbacks vs Promises",
+                description:
+                    "Callbacks and promises are techniques for handling asynchronous operations in JavaScript. Callbacks involve passing a function to be executed after a task completes, while promises represent the eventual result of an asynchronous operation.",
+                workFlow: [
+                    "Callback: A function is passed and called when an async task completes.",
+                    "Promise Creation: A promise is created and returned for an async task.",
+                    "Handling Result: Promises use `.then()` and `.catch()` to handle results and errors."
+                ],
+                Benefits: [
+                    "Promises provide a cleaner syntax and better error handling than callbacks, reducing callback hell.",
+                    "They allow chaining, improving readability and control over asynchronous flows.",
+                    "Understanding promises helps in writing modern, maintainable async JavaScript code."
+                ]
+            },
+            {
+                id: "5",
+                title: "Closures",
+                description:
+                    "Closures are a feature of JavaScript where an inner function has access to the outer function's variables even after the outer function has finished executing. They are created every time a function is defined, at function creation time.",
+                workFlow: [
+                    "Outer Function: Defines some variables and returns an inner function.",
+                    "Inner Function: Retains access to the variables of the outer function even after it completes.",
+                    "Scope Chain: Closures maintain access to the scope chain in which they were created."
+                ],
+                Benefits: [
+                    "Closures enable data encapsulation and create private variables.",
+                    "They are essential for managing state in JavaScript applications.",
+                    "Closures can reduce memory leaks and enhance modularity by hiding implementation details."
+                ]
+            },
+            {
+                id: "6",
+                title: "Prototypal Inheritance",
+                description:
+                    "Prototypal inheritance is a feature in JavaScript where objects inherit properties and methods from other objects. Each JavaScript object has a prototype from which it can access inherited properties.",
+                workFlow: [
+                    "Prototype Chain: Each object has a prototype, forming a chain for inheritance.",
+                    "Inheritance: Objects can inherit properties and methods from their prototypes.",
+                    "Method Sharing: Common methods are shared across objects through their prototype."
+                ],
+                Benefits: [
+                    "Prototypal inheritance enables efficient method sharing, reducing memory usage.",
+                    "It supports dynamic inheritance, allowing objects to adapt their behaviors.",
+                    "Understanding prototypes helps in mastering JavaScript's object-oriented programming model."
+                ]
+            },
+            {
+                id: "7",
+                title: "Higher-Order Functions",
+                description:
+                    "Higher-order functions are functions that take other functions as arguments or return functions as results. They are fundamental in JavaScript for building abstractions and handling asynchronous operations.",
+                workFlow: [
+                    "Accept Functions: Higher-order functions accept other functions as arguments.",
+                    "Return Functions: They can also return functions as results.",
+                    "Usage: Common higher-order functions include map, filter, and reduce."
+                ],
+                Benefits: [
+                    "Higher-order functions enable more flexible and concise code by abstracting behavior.",
+                    "They simplify handling arrays and collections in JavaScript.",
+                    "Understanding them is crucial for mastering functional programming concepts in JavaScript."
+                ]
+            },
+            {
+                id: "9",
+                title: "Currying",
+                description:
+                    "Currying is a functional programming technique in JavaScript where a function with multiple arguments is transformed into a sequence of functions, each taking a single argument.",
+                workFlow: [
+                    "Transform Function: A function with multiple arguments is transformed into nested functions.",
+                    "Single Argument Functions: Each nested function takes one argument.",
+                    "Usage: Currying enables partial application, allowing functions to be reused with preset arguments."
+                ],
+                Benefits: [
+                    "Currying facilitates creating reusable and modular code by breaking down functions.",
+                    "It enables partial application, where some arguments can be preset.",
+                    "Currying enhances function composability in functional programming."
+                ]
+            },
+            {
+                id: "10",
+                title: "Async Await",
+                description:
+                    "Async/Await is a syntactic feature in JavaScript that simplifies working with Promises, making asynchronous code look and behave more like synchronous code. `async` functions always return a Promise, and `await` pauses execution until a Promise is resolved or rejected.",
+                workFlow: [
+                    "Async Function: Declaring a function with `async` makes it return a Promise.",
+                    "Await Keyword: Pauses the execution until the awaited Promise resolves.",
+                    "Error Handling: Can use `try/catch` for handling errors with async/await, simplifying error handling in async flows."
+                ],
+                Benefits: [
+                    "Async/await makes asynchronous code easier to read and write, improving readability.",
+                    "It enables handling asynchronous operations in a more structured way than using callbacks.",
+                    "Using async/await helps in reducing callback hell and makes debugging easier."
+                ]
+            },
+            {
+                id: "11",
+                title: "Memoization",
+                description:
+                    "Memoization is an optimization technique where the results of expensive function calls are cached, so repeated calls with the same inputs return the cached result, avoiding redundant calculations.",
+                workFlow: [
+                    "Function Cache: Store the results of expensive function calls.",
+                    "Check Cache: On subsequent calls with the same inputs, check the cache for the result.",
+                    "Return Cached Result: If a cached result exists, return it instead of re-executing the function."
+                ],
+                Benefits: [
+                    "Memoization improves performance by reducing redundant calculations, especially in recursive functions.",
+                    "It can enhance the efficiency of applications, particularly in CPU-intensive operations.",
+                    "Memoization is useful in scenarios like searching, sorting, and operations with large datasets."
+                ]
+            },
+            {
+                id: "12",
+                title: "Debounce & Throttle",
+                description:
+                    "Debounce and throttle are techniques for controlling how often a function is executed. Debouncing delays function execution until a pause in events, while throttling limits the execution to once every specified interval.",
+                workFlow: [
+                    "Debounce: Delays function execution until after a specific period without triggering.",
+                    "Throttle: Limits the function to execute only once per defined time interval.",
+                    "Event Optimization: Useful for optimizing repetitive events like scroll, resize, and keypress."
+                ],
+                Benefits: [
+                    "Debounce and throttle help prevent performance issues in high-frequency events like scrolling and resizing.",
+                    "They improve application efficiency by controlling function execution frequency.",
+                    "These techniques reduce the load on the browser, improving user experience in web applications."
+                ]
+            },
+            {
+                id: "13",
+                title: "Generators",
+                description:
+                    "Generators are special functions in JavaScript that allow pausing and resuming execution using the `function*` syntax. They return an iterator, which can yield multiple values over time.",
+                workFlow: [
+                    "Define Generator: Use `function*` to define a generator function.",
+                    "Yield Values: Use `yield` to return values one at a time.",
+                    "Resume Execution: Each `yield` pauses the generator, which can be resumed later to get the next value."
+                ],
+                Benefits: [
+                    "Generators allow handling asynchronous operations and implementing custom iterators more easily.",
+                    "They help manage large datasets by yielding values on demand, saving memory.",
+                    "Generators facilitate lazy evaluation, which is useful for optimizing performance in certain scenarios."
+                ]
+            },
+            {
+                id: "14",
+                title: "Object.freeze & Object.seal",
+                description:
+                    "`Object.freeze` and `Object.seal` are methods in JavaScript to control modifications to objects. `Object.freeze` makes an object immutable, while `Object.seal` allows modifying properties but prevents adding or removing them.",
+                workFlow: [
+                    "Object.freeze: Prevents adding, removing, or changing properties on an object.",
+                    "Object.seal: Allows modification of existing properties but prevents adding or deleting properties.",
+                    "Usage: Both methods are used to control data integrity and prevent unwanted modifications."
+                ],
+                Benefits: [
+                    "`Object.freeze` helps in creating immutable objects, which can prevent bugs due to accidental modifications.",
+                    "`Object.seal` is useful when you want to prevent additions or deletions but allow modifications.",
+                    "Both methods improve data integrity and security, particularly in large codebases."
+                ]
+            },
+            {
+                id: "15",
+                title: "Type Coercion",
+                description:
+                    "Type coercion is the automatic or implicit conversion of values from one data type to another in JavaScript. It occurs during comparisons, arithmetic operations, and assignments.",
+                workFlow: [
+                    "Implicit Conversion: JavaScript converts data types automatically during operations.",
+                    "Explicit Conversion: Developers can use methods like `parseInt` or `String` for explicit type conversion.",
+                    "Comparisons: Type coercion is common in equality checks (== vs ===)."
+                ],
+                Benefits: [
+                    "Understanding type coercion helps in writing predictable and error-free code.",
+                    "It aids in avoiding unexpected results in comparisons and operations involving different data types.",
+                    "Explicit type conversion enhances code readability and reduces bugs."
+                ]
+            },
+            {
+                id: "16",
+                title: "Shallow Copy vs Deep Copy",
+                description:
+                    "A shallow copy duplicates the top-level properties of an object, while a deep copy recursively duplicates all nested properties. Shallow copies share references to nested objects, whereas deep copies create independent copies.",
+                workFlow: [
+                    "Shallow Copy: Duplicates only the top-level properties, references nested objects.",
+                    "Deep Copy: Recursively duplicates all properties, creating a new copy of nested objects.",
+                    "Usage: Common methods for shallow copy include Object.assign and spread syntax, while deep copy requires libraries or custom functions."
+                ],
+                Benefits: [
+                    "Deep copies prevent unintentional modifications to the original data structure.",
+                    "Understanding the difference helps avoid bugs, especially in complex data structures.",
+                    "It aids in selecting appropriate copy methods based on data structure and use cases."
+                ]
+            },
+            {
+                id: "17",
+                title: "Web Workers",
+                description:
+                    "Web Workers are a feature in JavaScript that allows running scripts in the background on a separate thread. This enables intensive computations without blocking the main thread, enhancing application responsiveness.",
+                workFlow: [
+                    "Create Worker: Define and create a web worker using `new Worker()`.",
+                    "Message Passing: Communicate with the worker through messages (postMessage and onmessage).",
+                    "Background Processing: Web workers run independently, enabling offloading of heavy computations."
+                ],
+                Benefits: [
+                    "Web Workers improve performance by offloading tasks to separate threads, freeing up the main thread.",
+                    "They enhance user experience by preventing the UI from freezing during intensive computations.",
+                    "Using web workers is essential for responsive web applications that require significant processing."
+                ]
+            },
+            {
+                id: "19",
+                title: "SetTimeout vs SetInterval",
+                description:
+                    "`setTimeout` and `setInterval` are JavaScript functions that manage timing events. `setTimeout` executes a function once after a specified delay, while `setInterval` repeatedly executes a function at specified intervals.",
+                workFlow: [
+                    "SetTimeout: Executes a function once after a delay.",
+                    "SetInterval: Repeatedly executes a function every specified time interval.",
+                    "Clear: Both can be cleared using `clearTimeout` and `clearInterval` respectively."
+                ],
+                Benefits: [
+                    "`setTimeout` is useful for delaying execution or scheduling tasks in JavaScript.",
+                    "`setInterval` helps in creating recurring events, like updating a clock or checking for updates.",
+                    "Understanding these methods is crucial for controlling time-based events in web applications."
+                ]
+            },
+            {
+                id: "20",
+                title: "Event Propagation",
+                description:
+                    "Event propagation is the way in which events move through the DOM in JavaScript. It consists of three phases: capturing, target, and bubbling. Events start from the root, pass down to the target, and bubble back up.",
+                workFlow: [
+                    "Capture Phase: Event travels from the root to the target element.",
+                    "Target Phase: The event reaches the target element.",
+                    "Bubble Phase: The event bubbles back up to the root."
+                ],
+                Benefits: [
+                    "Understanding event propagation allows precise control over event handling in complex UIs.",
+                    "It enables developers to create efficient event listeners and manage DOM interactions effectively.",
+                    "Event propagation helps avoid unintended behaviors by properly handling capture and bubble phases."
+                ]
+            },
+            {
+                id: "21",
+                title: "Reduce",
+                description:
+                    "`reduce` is a JavaScript array method that processes each element in an array to accumulate a single result. It applies a callback function to each element, passing the accumulated result to the next iteration.",
+                workFlow: [
+                    "Initialize: Provide an initial value for the accumulator.",
+                    "Process Each Element: Apply the callback function to each element, updating the accumulator.",
+                    "Return Result: After processing all elements, return the final accumulated result."
+                ],
+                Benefits: [
+                    "`reduce` is versatile for aggregating values, such as sums, counts, and complex calculations.",
+                    "It allows concise and powerful array manipulations, reducing the need for loops.",
+                    "Understanding `reduce` is essential for functional programming patterns in JavaScript."
+                ]
+            },
+            {
+                id: "22",
+                title: "Pure and Impure Functions",
+                description:
+                    "A pure function is a function that, given the same inputs, always returns the same output and has no side effects. Impure functions, by contrast, depend on external factors or cause side effects, such as modifying global variables.",
+                workFlow: [
+                    "Pure Function: No side effects, consistent output for same inputs.",
+                    "Impure Function: Can depend on external variables, causing side effects.",
+                    "Use Cases: Pure functions are ideal for functional programming and testing."
+                ],
+                Benefits: [
+                    "Pure functions improve code predictability and make debugging easier.",
+                    "They simplify unit testing, as their output only depends on input.",
+                    "Understanding purity helps design modular, maintainable code by reducing dependencies."
+                ]
+            },
+            {
+                id: "23",
+                title: "Function Borrowing",
+                description:
+                    "Function borrowing in JavaScript allows an object to use a method from another object. This is commonly done using `call` or `apply` to invoke the method with a specified `this` context.",
+                workFlow: [
+                    "Define Method: An object has a method defined.",
+                    "Borrow Method: Another object can borrow this method using `call` or `apply`.",
+                    "Invoke with Context: The method executes with the borrowed context, accessing the other object's properties."
+                ],
+                Benefits: [
+                    "Function borrowing provides flexibility, allowing objects to share methods without inheritance.",
+                    "It can help reduce code duplication by reusing existing methods.",
+                    "Understanding function borrowing is useful in object-oriented JavaScript programming."
+                ]
+            },
+            {
+                id: "26",
+                title: "Spread Operator",
+                description:
+                    "The spread operator (`...`) in JavaScript is used to expand iterable elements (like arrays or objects) into individual elements. It enables shallow copying and merging of arrays or objects easily.",
+                workFlow: [
+                    "Spread Array: Expands an array's elements into individual items.",
+                    "Spread Object: Expands object properties, useful for cloning or merging objects.",
+                    "Combining Arrays/Objects: The spread operator is useful for combining data structures."
+                ],
+                Benefits: [
+                    "The spread operator simplifies working with arrays and objects, improving code readability.",
+                    "It enables easy copying and merging, reducing the need for manual iteration.",
+                    "Understanding the spread operator is essential for efficient handling of collections in JavaScript."
+                ]
+            }
+        ]
+    },
     systemDesign: {
         title: "System Design",
         type: "basic",
@@ -135,7 +573,7 @@ const blogsData = {
             }
         ]
     },
-    systemDesigns: {
+    behavioralQuestions: {
         title: "Behavioral Questions",
         type: "star",
         Content: [
@@ -204,7 +642,8 @@ const blogsData = {
             }
 
         ]
-    }
+    },
+
 };
 
 export default blogsData;

@@ -8,6 +8,7 @@ const BlogsPage = () => {
     const [searchQuery, setSearchQuery] = useState("");
 
     const categoriesPerPage = 5;
+
     const filteredCategories = categories.filter((category) => {
         const categoryTitleMatches = blogsData[category].title.toLowerCase().includes(searchQuery.toLowerCase());
 
@@ -17,7 +18,6 @@ const BlogsPage = () => {
 
         return categoryTitleMatches || contentTitleMatches;
     });
-
 
     // Calculate total number of pages
     const totalPages = Math.ceil(filteredCategories.length / categoriesPerPage);
@@ -40,7 +40,7 @@ const BlogsPage = () => {
                 <div className="mb-6">
                     <input
                         type="text"
-                        placeholder="Search categories..."
+                        placeholder="Search Topics..."
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                         className="w-full p-3 bg-gray-800 text-gray-100 rounded-lg focus:outline-none"
@@ -48,47 +48,54 @@ const BlogsPage = () => {
                 </div>
 
                 {/* Category List with Pagination */}
-                {currentCategories.map((category) => (
-                    <div key={category} className="mb-12">
-                        <h2 className="text-3xl font-semibold text-teal-400 mb-6">{blogsData[category].title}</h2>
-                        {
-                            blogsData[category].type === "basic" ? (
-                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                                    {blogsData[category].Content.map((blog) => (
-                                        <Link
-                                            to={`/blogs/${category}/${blog.id}`}
-                                            key={blog.id}
-                                            className="block p-4 bg-gray-900 shadow-lg rounded-lg hover:shadow-xl transform hover:scale-105 transition-transform duration-300"
-                                        >
-                                            <h3 className="text-2xl font-semibold text-teal-400 mb-2">{blog.title}</h3>
-                                        </Link>
-                                    ))}
-                                </div>
-                            ) : blogsData[category].type === "star" ? (
-                                <div className="grid">
-                                    {blogsData[category].Content.map((blog) => (
-                                        <Link
-                                            to={`/blogs/${category}/${blog.id}`}
-                                            key={blog.id}
-                                            className=" m-2 block p-4 bg-gray-900 shadow-lg rounded-lg hover:shadow-xl transform hover:scale-105 transition-transform duration-300"
-                                        >
-                                            <h3 className="text-2xl font-semibold text-teal-400 mb-2">{blog.title}</h3>
-                                        </Link>
-                                    ))}
-                                </div>
-                            ) : null
-                        }
+                {currentCategories.map((category) => {
+                    const isCategoryMatch = blogsData[category].title.toLowerCase().includes(searchQuery.toLowerCase());
 
+                    return (
+                        <div key={category} className="mb-12">
+                            <h2
+                                className={`text-3xl font-semibold mb-6 ${isCategoryMatch && searchQuery !== "" ? "text-yellow-400" : "text-teal-400"
+                                    }`}
+                            >
+                                {blogsData[category].title}
+                            </h2>
+                            <div
+                                className={
+                                    blogsData[category].type === "basic"
+                                        ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                                        : "grid"
+                                }
+                            >
+                                {blogsData[category].Content.map((blog) => {
+                                    const isBlogTitleMatch = blog.title.toLowerCase().includes(searchQuery.toLowerCase());
 
-                    </div>
-                ))}
+                                    return (
+                                        <Link
+                                            to={`/topics/${category}/${blog.id}`}
+                                            key={blog.id}
+                                            className="block p-4 bg-gray-900 shadow-lg rounded-lg hover:shadow-xl transform hover:scale-105 transition-transform duration-300 my-2"
+                                        >
+                                            <h3
+                                                className={`text-2xl font-semibold mb-1 ${isBlogTitleMatch && searchQuery !== "" ? "text-yellow-400" : "text-teal-400"
+                                                    }`}
+                                            >
+                                                {blog.title}
+                                            </h3>
+                                        </Link>
+                                    );
+                                })}
+                            </div>
+                        </div>
+                    );
+                })}
 
                 {/* Pagination Controls */}
                 <div className="flex justify-between mt-8">
                     <button
                         onClick={prevPage}
                         disabled={currentPage === 1}
-                        className={`px-4 py-2 bg-teal-400 text-gray-900 rounded-lg ${currentPage === 1 && "opacity-50 cursor-not-allowed"}`}
+                        className={`px-4 py-2 bg-teal-400 text-gray-900 rounded-lg ${currentPage === 1 && "opacity-50 cursor-not-allowed"
+                            }`}
                     >
                         Previous
                     </button>
@@ -98,7 +105,8 @@ const BlogsPage = () => {
                     <button
                         onClick={nextPage}
                         disabled={currentPage === totalPages}
-                        className={`px-4 py-2 bg-teal-400 text-gray-900 rounded-lg ${currentPage === totalPages && "opacity-50 cursor-not-allowed"}`}
+                        className={`px-4 py-2 bg-teal-400 text-gray-900 rounded-lg ${currentPage === totalPages && "opacity-50 cursor-not-allowed"
+                            }`}
                     >
                         Next
                     </button>
