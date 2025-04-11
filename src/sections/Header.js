@@ -53,6 +53,12 @@ function Header() {
           >
             Interivew Preparation
           </Link>
+          <Link
+            to="/integration"
+            className="hover:text-teal-400 mt-2 transition-colors duration-300 cursor-pointer"
+          >
+            Integration
+          </Link>
           <a
             href={`${process.env.PUBLIC_URL}/Resume.pdf`}
             download
@@ -125,6 +131,24 @@ function Header() {
               className="hover:text-teal-400 transition-colors duration-300 cursor-pointer"
             >
               Projects
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/topics"
+              onClick={handleClickNav}
+              className="hover:text-teal-400 transition-colors duration-300 cursor-pointer"
+            >
+              Interivew Preparation
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/integration"
+              onClick={handleClickNav}
+              className="hover:text-teal-400 transition-colors duration-300 cursor-pointer"
+            >
+              Integration
             </Link>
           </li>
           <li>

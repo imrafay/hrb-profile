@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import BlogsPage from './pages/BlogsPage';
 import BlogDetailPage from './pages/BlogDetailPage';
+import Integration from './pages/Integration';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route path="/topics" element={<BlogsPage />} />
             <Route path="/topics/:category" element={<BlogsPage />} />
             <Route path="/topics/:category/:id" element={<BlogDetailPage />} />
+            <Route path="/integration" element={<Integration />} />
           </Routes>
         </main>
         <Footer />
